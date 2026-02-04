@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Gonzalez | Product Director</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --text: #334155;
+            --text-light: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header / Hero */
+        header {
+            background-color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        h1 {
+            color: var(--dark);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--primary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Sections */
+        section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+        }
+
+        h2 {
+            color: var(--dark);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        /* Experience Timeline */
+        .job {
+            margin-bottom: 2rem;
+            border-left: 3px solid var(--light);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .job:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .role {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        /* Company Link Styling */
+        .company {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        a.company-link {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a.company-link:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            background: #eff6ff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .job ul {
+            list-style-type: none;
+            margin-top: 0.8rem;
+        }
+
+        .job li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .job li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Education Grid */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .edu-card {
+            background: var(--light);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .edu-school {
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .edu-school a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .edu-school a:hover {
+            color: var(--primary);
+        }
+
+        .edu-degree {
+            color: var(--primary);
+            font-size: 0.95rem;
+            margin: 0.25rem 0;
+        }
+
+        .edu-year {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .job-header { flex-direction: column; gap: 0.25rem; }
+            .container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Victor Gonzalez Corbacho</h1>
+        <div class="subtitle">Product Manager & Leader</div>
+        <div class="contact-info">
+            <a href="mailto:vgonzalezc90@gmail.com">📧 vgonzalezc90@gmail.com</a>
+            <a href="tel:+34659826966">📱 +34 659826966</a>
+            <a href="https://www.linkedin.com/in/vgonzalezcorbacho/" target="_blank">🔗 LinkedIn Profile</a>
+            <span>📍 Remote / Barcelona</span>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <h2>About Me</h2>
+            <p>
+                A leader with over 6+ years of experience in the tech industry across several verticals. 
+                I have run large cross-functional, international teams with a deep understanding of Product, Technology, Strategy, and Business. 
+                Honesty, proactiveness, and kindness are the values that resonate with me the most.
+            </p>
+        </section>
+
+        <section>
+            <h2>Professional Experience</h2>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="role">Associate Product Director</span> | 
+                        <span class="company"><a href="https://www.king.com/" target="_blank" class="company-link">King</a></span>
+                    </div>
+                    <span class="date">June 2023 – Present</span>
+                </div>
+                <ul>
+                    <li>Leading a cross-functional team delivering features to segment players based on challenges, including ML Models.</li>
+                    <li>Managing 2 Product Managers, leading discovery and delivery techniques.</li>
+                    <li>Contributed to business outcomes worth several millions of dollars; successfully brought a +10% revenue increase during 2024-25 FY.</li>
+                    <li>Defining Product Strategy and Vision for Soda's CoreGameplay.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="role">Product Manager</span> | 
+                        <span class="company"><a href="https://www.king.com/" target="_blank" class="company-link">King</a></span>
+                    </div>
+                    <span class="date">Nov 2021 – June 2023</span>
+                </div>
+                <ul>
+                    <li>Focused on features to acquire, retain, and monetize new players.</li>
+                    <li>Collaborated with Performance Marketing on Ads strategy for Soda.</li>
+                    <li>Successfully created +8% impact in Soda in 2023-2024 FY.</li>
+                    <li>Led discovery, execution, data analysis, and A/B test experimentation.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="role">Product Manager</span> | 
+                        <span class="company"><a href="https://playtomic.com/" target="_blank" class="company-link">Playtomic</a></span>
+                    </div>
+                    <span class="date">Feb 2021 – Nov 2021</span>
+                </div>
+                <ul>
+                    <li>Successfully launched the Social part of the app, scaling MAU to 500k.</li>
+                    <li>Introduced discovery techniques to the Product Team.</li>
+                    <li>Managed Mixpanel data and stakeholder relations.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="role">Product Manager</span> | 
+                        <span class="company"><a href="https://tomsfive.com/" target="_blank" class="company-link">tomsfive</a></span>
+                    </div>
+                    <span class="date">Feb 2020 – Feb 2021</span>
+                </div>
+                <ul>
+                    <li>Prioritized User Stories for SaaS Start-up using RICE scoring.</li>
+                    <li>Created Product Strategy, Vision & Mission, and Roadmap.</li>
+                    <li>Conducted user research, competitor analysis, and User Value Proposition Canvas.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="role">Product Owner</span> | 
+                        <span class="company"><a href="https://www.allianz.com/" target="_blank" class="company-link">Allianz Technology</a></span>
+                    </div>
+                    <span class="date">Aug 2019 – Mar 2020</span>
+                </div>
+                <ul>
+                    <li>Managed stakeholders within Paris and Barcelona.</li>
+                    <li>Wrote and prioritized over 200 user stories.</li>
+                </ul>
+            </div>
+            
+             <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="role">Co-Founder</span> | <span class="company">SapbéServeis</span>
+                    </div>
+                    <span class="date">Jan 2015 – July 2017</span>
+                </div>
+                <ul>
+                    <li>Co-Founder of a SaaS company; managed web and product creation.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education & Certifications</h2>
+            <div class="education-grid">
+                <div class="edu-card">
+                    <div class="edu-school"><a href="https://www.uoc.edu/" target="_blank">UOC</a></div>
+                    <div class="edu-degree">Economics Degree</div>
+                    <div class="edu-year">Class of 2023</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-school"><a href="https://www.eae.es/" target="_blank">EAE Business School</a></div>
+                    <div class="edu-degree">Master in Business Administration</div>
+                    <div class="edu-year">Class of 2018</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-school"><a href="https://www.udemy.com/" target="_blank">Udemy</a></div>
+                    <div class="edu-degree">Python Bootcamp</div>
+                    <div class="edu-year">Autumn 2020</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-school"><a href="https://www.mindtheproduct.com/" target="_blank">Mind the Product</a></div>
+                    <div class="edu-degree">PM Foundation Certificate</div>
+                    <div class="edu-year">Winter 2019</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-school"><a href="https://www.udemy.com/" target="_blank">Udemy</a></div>
+                    <div class="edu-degree">SQL Course</div>
+                    <div class="edu-year">Spring 2019</div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Victor Gonzalez Corbacho. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
