@@ -220,4 +220,196 @@
         }
 
         .edu-degree {
-            color: var
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .edu-year {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile tweaks */
+        @media (max-width: 640px) {
+            h1 { font-size: 2.2rem; }
+            .job-header { flex-direction: column; gap: 0.5rem; }
+            .container { margin-top: -1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Victor Gonzalez</h1>
+        <div class="subtitle">Associate Product Director</div>
+        <div class="contact-info">
+            <a href="mailto:vgonzalezc90@gmail.com">✉️ vgonzalezc90@gmail.com</a>
+            <a href="https://www.linkedin.com/in/vgonzalezcorbacho/" target="_blank">🔗 LinkedIn</a>
+            <span>📍 Remote / Barcelona</span>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <h2>Executive Profile</h2>
+            <p style="font-size: 1.1rem; color: var(--text-main);">
+                Strategic <strong>Product Leader</strong> with 6+ years of experience driving revenue growth and scaling user bases in the <strong>Gaming and SaaS</strong> industries. 
+                Proven track record of defining product vision, leading cross-functional international teams, and executing high-impact strategies at top-tier companies like King and Playtomic. 
+                Passionate about combining <strong>Machine Learning</strong> and <strong>Data Analysis</strong> to solve complex user challenges.
+            </p>
+        </section>
+
+        <section>
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Product Strategy</span>
+                <span class="skill-tag">Team Leadership</span>
+                <span class="skill-tag">Monetization & Growth</span>
+                <span class="skill-tag">Machine Learning (ML)</span>
+                <span class="skill-tag">A/B Testing & Experimentation</span>
+                <span class="skill-tag">Data Analysis (SQL, Python)</span>
+                <span class="skill-tag">Stakeholder Management</span>
+                <span class="skill-tag">Mobile Gaming (B2C)</span>
+                <span class="skill-tag">SaaS (B2B)</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Professional Experience</h2>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="role-group">
+                        <span class="role">Associate Product Director</span>
+                        <a href="https://www.king.com/" target="_blank" class="org-link">King</a>
+                    </div>
+                    <span class="date">June 2023 – Present</span>
+                </div>
+                <ul>
+                    <li><strong>Strategic Leadership:</strong> Lead a cross-functional organization focused on player segmentation and challenge-based features, integrating advanced <strong>ML Models</strong>.</li>
+                    <li><strong>Team Management:</strong> Directly manage and mentor 2 Product Managers, overseeing discovery, delivery, and career development.</li>
+                    <li><strong>Revenue Impact:</strong> Delivered a <strong>+10% revenue increase</strong> (multi-million dollar impact) for the 2024-25 FY by optimizing game economy and features.</li>
+                    <li><strong>Vision:</strong> Define and own the Product Strategy and Vision for <em>Candy Crush Soda's</em> Core Gameplay.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="role-group">
+                        <span class="role">Product Manager</span>
+                        <a href="https://www.king.com/" target="_blank" class="org-link">King</a>
+                    </div>
+                    <span class="date">Nov 2021 – June 2023</span>
+                </div>
+                <ul>
+                    <li><strong>Growth & Acquisition:</strong> Spearheaded features to acquire, retain, and monetize new players, achieving an <strong>+8% impact</strong> in FY 2023-24.</li>
+                    <li><strong>Cross-Functional Collaboration:</strong> Orchestrated ad strategy in partnership with Performance Marketing teams.</li>
+                    <li><strong>Experimentation:</strong> Led rigorous A/B testing and data analysis to validate hypotheses and drive product decisions.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="role-group">
+                        <span class="role">Product Manager</span>
+                        <a href="https://playtomic.com/" target="_blank" class="org-link">Playtomic</a>
+                    </div>
+                    <span class="date">Feb 2021 – Nov 2021</span>
+                </div>
+                <ul>
+                    <li><strong>Product Launch:</strong> Led the end-to-end launch of the app's "Social" vertical, successfully scaling to <strong>500k Monthly Active Users (MAU)</strong>.</li>
+                    <li><strong>Process Improvement:</strong> Introduced modern product discovery techniques to the team, enhancing delivery speed and quality.</li>
+                    <li><strong>Analytics:</strong> Managed data pipelines and user behavior tracking via Mixpanel.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="role-group">
+                        <span class="role">Product Manager</span>
+                        <a href="https://tomsfive.com/" target="_blank" class="org-link">tomsfive</a>
+                    </div>
+                    <span class="date">Feb 2020 – Feb 2021</span>
+                </div>
+                <ul>
+                    <li><strong>Prioritization:</strong> Managed the backlog for a SaaS startup using the <strong>RICE scoring</strong> framework to maximize development ROI.</li>
+                    <li><strong>Strategy:</strong> Developed the User Value Proposition Canvas and defined the initial Product Vision & Mission.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="role-group">
+                        <span class="role">Product Owner</span>
+                        <a href="https://www.allianz.com/" target="_blank" class="org-link">Allianz Technology</a>
+                    </div>
+                    <span class="date">Aug 2019 – Mar 2020</span>
+                </div>
+                <ul>
+                    <li>Managed complex stakeholder relationships between Paris and Barcelona HQs.</li>
+                    <li>Defined and prioritized 200+ user stories for development teams.</li>
+                </ul>
+            </div>
+            
+             <div class="job">
+                <div class="job-header">
+                    <div class="role-group">
+                        <span class="role">Co-Founder</span>
+                        <span class="company-text">SapbéServeis</span>
+                    </div>
+                    <span class="date">Jan 2015 – July 2017</span>
+                </div>
+                <ul>
+                    <li>Founded and managed product development for a local SaaS solution.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education & Certifications</h2>
+            <div class="education-grid">
+                <div class="edu-card">
+                    <div class="edu-school"><a href="https://www.eae.es/" target="_blank">EAE Business School</a></div>
+                    <div class="edu-degree">Master in Business Administration (MBA)</div>
+                    <div class="edu-year">2018</div>
+                </div>
+                 <div class="edu-card">
+                    <div class="edu-school"><a href="https://www.uoc.edu/" target="_blank">UOC</a></div>
+                    <div class="edu-degree">Bachelor's Degree in Economics</div>
+                    <div class="edu-year">2023</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-school"><a href="https://www.mindtheproduct.com/" target="_blank">Mind the Product</a></div>
+                    <div class="edu-degree">PM Foundation Certificate</div>
+                    <div class="edu-year">2019</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-school"><a href="https://www.udemy.com/" target="_blank">Udemy</a></div>
+                    <div class="edu-degree">Python for Developers</div>
+                    <div class="edu-year">2020</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-school"><a href="https://www.udemy.com/" target="_blank">Udemy</a></div>
+                    <div class="edu-degree">SQL Data Analysis</div>
+                    <div class="edu-year">2019</div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Victor Gonzalez Corbacho. Built with simple HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>
