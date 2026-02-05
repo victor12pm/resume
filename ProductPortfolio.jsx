@@ -26,7 +26,7 @@ const projects = [
 
 function Badge({ children }) {
   return (
-    <span className="rounded-full border border-white/20 bg-white/10 px-2 py-0.5 text-xs font-medium text-white/80">
+    <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-xs font-medium text-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
       {children}
     </span>
   );
@@ -64,15 +64,15 @@ export default function ProductPortfolio() {
     <section className="w-full bg-slate-950 px-6 py-16 text-white">
       <div className="mx-auto max-w-6xl">
         <div className="flex justify-center">
-          <div className="relative flex w-full max-w-xs items-center justify-between rounded-full bg-slate-100 p-1 text-slate-700">
+          <div className="relative flex w-full max-w-sm items-center justify-between rounded-full border border-white/15 bg-white/5 p-1 text-white/80 shadow-[0_12px_32px_rgba(15,23,42,0.4)]">
             <motion.div
               layout
-              className="absolute left-1 top-1 h-10 w-1/2 rounded-full bg-white shadow"
+              className="absolute right-1 top-1 h-10 w-10 rounded-full bg-white shadow-[0_6px_18px_rgba(0,0,0,0.35)]"
             />
             <button className="relative z-10 flex h-10 flex-1 items-center justify-center text-sm font-semibold">
               Resume
             </button>
-            <button className="relative z-10 flex h-10 flex-1 items-center justify-center text-sm font-semibold text-slate-500">
+            <button className="relative z-10 flex h-10 flex-1 items-center justify-center text-sm font-semibold">
               Products
             </button>
           </div>
