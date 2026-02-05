@@ -22,7 +22,7 @@
         header {
             background: linear-gradient(135deg, var(--text-main) 0%, var(--primary-dark) 100%);
             color: white;
-            padding: 4rem 2rem 6rem; 
+            padding: 4rem 2rem 6rem;
             text-align: center;
             position: relative;
         }
@@ -76,10 +76,32 @@
 
         h2 { border-bottom: 2px solid #e2e8f0; padding-bottom: 1rem; margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
 
-        /* Resume Styles */
+        /* --- UPDATED SKILL TAGS CSS --- */
         .skills-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; }
-        .skill-tag { background-color: #eff6ff; color: var(--primary-dark); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; font-weight: 600; border: 1px solid #dbeafe; }
+        .skills-grid a { text-decoration: none; } /* Removes link underline */
         
+        .skill-tag { 
+            background-color: #eff6ff; 
+            color: var(--primary-dark); 
+            padding: 0.5rem 1rem; 
+            border-radius: 50px; 
+            font-size: 0.9rem; 
+            font-weight: 600; 
+            border: 1px solid #dbeafe;
+            transition: all 0.3s ease; /* Smooth hover transition */
+            display: inline-block;
+        }
+
+        .skill-tag:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-3px); /* Lifts badge up */
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            cursor: pointer;
+        }
+        /* --- END UPDATED SKILL TAGS CSS --- */
+
         .job { margin-bottom: 2.5rem; }
         .job-header { display: flex; justify-content: space-between; margin-bottom: 0.8rem; flex-wrap: wrap; }
         .role { font-size: 1.25rem; font-weight: 700; color: var(--text-main); display: block;}
@@ -92,68 +114,16 @@
         .edu-card { padding: 1rem; border-left: 3px solid var(--primary); background: #f8fafc; }
         .edu-school a { color: var(--text-main); font-weight: 700; text-decoration: none; }
 
-        /* Portfolio Grid Styles */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            transition: transform 0.2s;
-        }
-
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .project-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s; }
         .project-card:hover { transform: translateY(-5px); }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background-color: #cbd5e1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #64748b;
-            font-weight: 600;
-            text-align: center;
-            padding: 0;
-        }
-        
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
+        .project-image { width: 100%; height: 200px; background-color: #cbd5e1; display: flex; align-items: center; justify-content: center; color: #64748b; font-weight: 600; text-align: center; padding: 1rem; }
         .project-content { padding: 1.5rem; }
         .project-title { font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; }
         .project-desc { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem; }
-        
-        .tag { 
-            display: inline-block; 
-            font-size: 0.75rem; 
-            background: #f1f5f9; 
-            padding: 0.2rem 0.6rem; 
-            border-radius: 4px; 
-            color: var(--text-secondary); 
-            margin-right: 0.5rem;
-            text-decoration: none; 
-            transition: all 0.2s ease;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .tag:hover {
-            background-color: var(--primary);
-            color: white;
-            cursor: pointer;
-        }
+        .tag { display: inline-block; font-size: 0.75rem; background: #f1f5f9; padding: 0.2rem 0.6rem; border-radius: 4px; color: var(--text-secondary); margin-right: 0.5rem;}
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
         footer { text-align: center; padding: 2rem; color: var(--text-secondary); font-size: 0.9rem; }
     </style>
 </head>
@@ -169,8 +139,8 @@
         </div>
 
         <div class="nav-tabs">
-            <button class="tab-btn active" onclick="openTab(event, 'resume')">Resume</button>
-            <button class="tab-btn" onclick="openTab(event, 'portfolio')">Portfolio</button>
+            <button class="tab-btn active" onclick="openTab('resume')">Resume</button>
+            <button class="tab-btn" onclick="openTab('portfolio')">Portfolio</button>
         </div>
     </header>
 
@@ -188,11 +158,11 @@
             <section>
                 <h2>Core Competencies</h2>
                 <div class="skills-grid">
-                    <span class="skill-tag">Product Strategy</span>
-                    <span class="skill-tag">Team Leadership</span>
-                    <span class="skill-tag">Monetization & Growth</span>
-                    <span class="skill-tag">Machine Learning (ML)</span>
-                    <span class="skill-tag">Data Analysis (SQL, Python)</span>
+                    <a href="https://www.mindtheproduct.com/" target="_blank"><span class="skill-tag">Product Strategy</span></a>
+                    <a href="https://www.shrm.org/" target="_blank"><span class="skill-tag">Team Leadership</span></a>
+                    <a href="https://www.reforge.com/" target="_blank"><span class="skill-tag">Monetization & Growth</span></a>
+                    <a href="https://developers.google.com/machine-learning" target="_blank"><span class="skill-tag">Machine Learning (ML)</span></a>
+                    <a href="https://www.python.org/" target="_blank"><span class="skill-tag">Data Analysis (SQL, Python)</span></a>
                 </div>
             </section>
 
@@ -276,51 +246,51 @@
                             <div class="project-title">Candy Crush Soda Saga</div>
                             <div class="project-desc">Led core gameplay strategy and ML-based player segmentation for this massive mobile puzzle game.</div>
                             <div>
-                                <a href="https://www.king.com/" target="_blank" class="tag">Mobile Game</a>
-                                <a href="https://www.king.com/" target="_blank" class="tag">B2C</a>
-                                <a href="https://www.king.com/" target="_blank" class="tag">Live Ops</a>
+                                <span class="tag">Mobile Game</span>
+                                <span class="tag">B2C</span>
+                                <span class="tag">Live Ops</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="playtomic.jpg" alt="Playtomic App">
+                            <img src="playtomic.jpg" alt="Playtomic">
                         </div>
                         <div class="project-content">
                             <div class="project-title">Playtomic App</div>
                             <div class="project-desc">Launched the Social Vertical for the world's largest racket sports community, reaching 500k MAU.</div>
                             <div>
-                                <a href="https://playtomic.com/" target="_blank" class="tag">iOS / Android</a>
-                                <a href="https://playtomic.com/" target="_blank" class="tag">Social Marketplace</a>
+                                <span class="tag">iOS / Android</span>
+                                <span class="tag">Social Marketplace</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-image">
-                             <img src="tomsfive.jpg" alt="Tomsfive ATS">
+                            <img src="tomsfive.jpg" alt="Tomsfive">
                         </div>
                         <div class="project-content">
                             <div class="project-title">Tomsfive ATS</div>
                             <div class="project-desc">Defined product vision for this Applicant Tracking System (ATS), streamlining recruitment workflows.</div>
                             <div>
-                                <a href="https://tomsfive.com/" target="_blank" class="tag">B2B SaaS</a>
-                                <a href="https://tomsfive.com/" target="_blank" class="tag">Recruitment / ATS</a>
+                                <span class="tag">B2B SaaS</span>
+                                <span class="tag">Recruitment / ATS</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-image">
-                             <img src="allianz.jpg" alt="Allianz Travel CRM">
+                            <img src="allianz.jpg" alt="Allianz Technology">
                         </div>
                         <div class="project-content">
                             <div class="project-title">Allianz Travel CRM</div>
                             <div class="project-desc">Managed the CRM for travel insurance, optimizing workflows for internal stakeholders across EU.</div>
                             <div>
-                                <a href="https://www.allianz.com/" target="_blank" class="tag">Internal Tool</a>
-                                <a href="https://www.allianz.com/" target="_blank" class="tag">FinTech</a>
+                                <span class="tag">Internal Tool</span>
+                                <span class="tag">FinTech</span>
                             </div>
                         </div>
                     </div>
@@ -336,20 +306,19 @@
     </footer>
 
     <script>
-        function openTab(evt, tabName) {
-            var i, content, tablinks;
-            content = document.getElementsByClassName("content-section");
-            for (i = 0; i < content.length; i++) {
-                content[i].style.display = "none";
-                content[i].classList.remove("active");
+        function openTab(tabName) {
+            var sections = document.getElementsByClassName("content-section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove("active");
             }
-            tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            
+            var buttons = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
             }
-            document.getElementById(tabName).style.display = "block";
+
             document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.className += " active";
+            event.currentTarget.classList.add("active");
         }
     </script>
 
