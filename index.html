@@ -22,7 +22,7 @@
         header {
             background: linear-gradient(135deg, var(--text-main) 0%, var(--primary-dark) 100%);
             color: white;
-            padding: 4rem 2rem 6rem; /* Extra padding at bottom for tabs */
+            padding: 4rem 2rem 6rem; 
             text-align: center;
             position: relative;
         }
@@ -119,7 +119,7 @@
             color: #64748b;
             font-weight: 600;
             text-align: center;
-            padding: 1rem;
+            padding: 0; /* Removed padding so image fills the box */
         }
         
         .project-image img {
@@ -131,7 +131,28 @@
         .project-content { padding: 1.5rem; }
         .project-title { font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; }
         .project-desc { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem; }
-        .tag { display: inline-block; font-size: 0.75rem; background: #f1f5f9; padding: 0.2rem 0.6rem; border-radius: 4px; color: var(--text-secondary); margin-right: 0.5rem;}
+        
+        /* Updated Tag Style for Links */
+        .tag { 
+            display: inline-block; 
+            font-size: 0.75rem; 
+            background: #f1f5f9; 
+            padding: 0.2rem 0.6rem; 
+            border-radius: 4px; 
+            color: var(--text-secondary); 
+            margin-right: 0.5rem;
+            text-decoration: none; /* Removes underline from links */
+            transition: all 0.2s ease;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Hover Effect for Tags */
+        .tag:hover {
+            background-color: var(--primary);
+            color: white;
+            cursor: pointer;
+        }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
@@ -257,51 +278,51 @@
                             <div class="project-title">Candy Crush Soda Saga</div>
                             <div class="project-desc">Led core gameplay strategy and ML-based player segmentation for this massive mobile puzzle game.</div>
                             <div>
-                                <span class="tag">Mobile Game</span>
-                                <span class="tag">B2C</span>
-                                <span class="tag">Live Ops</span>
+                                <a href="https://www.king.com/" target="_blank" class="tag">Mobile Game</a>
+                                <a href="https://www.king.com/" target="_blank" class="tag">B2C</a>
+                                <a href="https://www.king.com/" target="_blank" class="tag">Live Ops</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-image">
-                             <img src="playtomic.jpg" alt="Playtomic">
+                            <img src="playtomic.jpg" alt="Playtomic App">
                         </div>
                         <div class="project-content">
                             <div class="project-title">Playtomic App</div>
                             <div class="project-desc">Launched the Social Vertical for the world's largest racket sports community, reaching 500k MAU.</div>
                             <div>
-                                <span class="tag">iOS / Android</span>
-                                <span class="tag">Social Marketplace</span>
+                                <a href="https://playtomic.com/" target="_blank" class="tag">iOS / Android</a>
+                                <a href="https://playtomic.com/" target="_blank" class="tag">Social Marketplace</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="tomsfive.jpg" alt="Tomsfive">
+                             <img src="tomsfive.jpg" alt="Tomsfive ATS">
                         </div>
                         <div class="project-content">
                             <div class="project-title">Tomsfive ATS</div>
                             <div class="project-desc">Defined product vision for this Applicant Tracking System (ATS), streamlining recruitment workflows.</div>
                             <div>
-                                <span class="tag">B2B SaaS</span>
-                                <span class="tag">Recruitment / ATS</span>
+                                <a href="https://tomsfive.com/" target="_blank" class="tag">B2B SaaS</a>
+                                <a href="https://tomsfive.com/" target="_blank" class="tag">Recruitment / ATS</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="allianz.jpg" alt="Allianz Technology">
+                             <img src="allianz.jpg" alt="Allianz Travel CRM">
                         </div>
                         <div class="project-content">
                             <div class="project-title">Allianz Travel CRM</div>
                             <div class="project-desc">Managed the CRM for travel insurance, optimizing workflows for internal stakeholders across EU.</div>
                             <div>
-                                <span class="tag">Internal Tool</span>
-                                <span class="tag">FinTech</span>
+                                <a href="https://www.allianz.com/" target="_blank" class="tag">Internal Tool</a>
+                                <a href="https://www.allianz.com/" target="_blank" class="tag">FinTech</a>
                             </div>
                         </div>
                     </div>
@@ -315,28 +336,3 @@
     <footer>
         <p>&copy; 2026 Victor Gonzalez Corbacho. Built with simple HTML & CSS.</p>
     </footer>
-
-    <script>
-        function openTab(tabName) {
-            // Hide all sections
-            var sections = document.getElementsByClassName("content-section");
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].classList.remove("active");
-            }
-            
-            // Remove active class from buttons
-            var buttons = document.getElementsByClassName("tab-btn");
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove("active");
-            }
-
-            // Show current section and activate button
-            document.getElementById(tabName).classList.add("active");
-            
-            // Find the button that was clicked (simple way)
-            event.currentTarget.classList.add("active");
-        }
-    </script>
-
-</body>
-</html>
