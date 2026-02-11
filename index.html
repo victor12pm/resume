@@ -351,6 +351,27 @@
             gap: 0.35rem;
             color: #334155;
             font-size: 0.9rem;
+            line-height: 1.3;
+            margin-bottom: 0.1rem;
+        }
+
+        .showcase-card span {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 1080px) {
+            .shell {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
         }
 
 
@@ -428,6 +449,7 @@
                 <button class="tab-btn" data-tab="projects-panel" role="tab" aria-selected="false">Projects</button>
                 <button class="tab-btn active" data-tab="highlights-panel" role="tab" aria-selected="true">Highlights</button>
             </div>
+        </aside>
 
             <div id="highlights-panel" class="tab-panel active" role="tabpanel">
                 <section class="hero">
