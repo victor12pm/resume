@@ -1,6 +1,6 @@
 {
   "name": "dogwalk-social-mobile",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
     "expo": "~51.0.28",
     "expo-location": "~17.0.1",
     "react": "18.2.0",
