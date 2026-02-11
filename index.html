@@ -155,6 +155,16 @@
             display: block;
         }
 
+        a.company-link {
+            color: #1e3a8a;
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(30, 58, 138, 0.3);
+        }
+
+        a.company-link:hover {
+            text-decoration: underline;
+        }
+
         .hero {
             display: grid;
             grid-template-columns: 1.3fr 1fr;
@@ -374,6 +384,25 @@
             }
         }
 
+
+        @media (max-width: 1080px) {
+            .shell {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .project-deep-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 720px) {
             body { padding: 1rem; }
             aside, main { padding: 1.2rem; }
@@ -450,7 +479,7 @@
                     <h4>Experience</h4>
                     <div class="experience-grid">
                         <article class="experience-card">
-                            <h5>King</h5>
+                            <h5><a class="company-link" href="https://www.king.com/" target="_blank" rel="noopener noreferrer">King</a></h5>
                             <span class="date">Associate Product Director · 2023–Present</span>
                             <ul>
                                 <li>Led ML-driven segmentation and challenge roadmap for Candy Crush Soda.</li>
@@ -460,7 +489,7 @@
                         </article>
 
                         <article class="experience-card">
-                            <h5>Playtomic</h5>
+                            <h5><a class="company-link" href="https://playtomic.com/" target="_blank" rel="noopener noreferrer">Playtomic</a></h5>
                             <span class="date">Product Manager · 2021</span>
                             <ul>
                                 <li>Launched Social vertical and scaled to 500k MAU.</li>
@@ -476,19 +505,19 @@
                     <div class="showcase-grid">
                         <article class="showcase-card">
                             <img src="candy.jpg" alt="Candy Crush" />
-                            <div class="meta"><strong>Candy Crush Soda</strong><span>Gaming / ML</span></div>
+                            <div class="meta"><strong><a class="company-link" href="https://www.king.com/game/candycrushsoda" target="_blank" rel="noopener noreferrer">Candy Crush Soda</a></strong><span>Gaming / ML</span></div>
                         </article>
                         <article class="showcase-card">
                             <img src="playtomic.jpg" alt="Playtomic" />
-                            <div class="meta"><strong>Playtomic Social</strong><span>Social / Mobile</span></div>
+                            <div class="meta"><strong><a class="company-link" href="https://playtomic.com/" target="_blank" rel="noopener noreferrer">Playtomic Social</a></strong><span>Social / Mobile</span></div>
                         </article>
                         <article class="showcase-card">
                             <img src="tomsfive.jpg" alt="Tomsfive" />
-                            <div class="meta"><strong>Tomsfive</strong><span>SaaS Platform</span></div>
+                            <div class="meta"><strong><a class="company-link" href="https://tomsfive.com/" target="_blank" rel="noopener noreferrer">Tomsfive</a></strong><span>SaaS Platform</span></div>
                         </article>
                         <article class="showcase-card">
                             <img src="allianz.jpg" alt="Allianz" />
-                            <div class="meta"><strong>Allianz Technology</strong><span>Enterprise Product</span></div>
+                            <div class="meta"><strong><a class="company-link" href="https://www.allianz.com/" target="_blank" rel="noopener noreferrer">Allianz Technology</a></strong><span>Enterprise Product</span></div>
                         </article>
                         <article class="showcase-card">
                             <img src="playtomic.jpg" alt="Portfolio Detail" />
@@ -520,7 +549,7 @@
                 <section class="section">
                     <h4>Professional Experience</h4>
                     <div class="compact-section">
-                        <h5>King · Associate Product Director (2023–Present)</h5>
+                        <h5><a class="company-link" href="https://www.king.com/" target="_blank" rel="noopener noreferrer">King</a> · Associate Product Director (2023–Present)</h5>
                         <ul>
                             <li>Lead challenge-based roadmap and ML segmentation for Candy Crush Soda.</li>
                             <li>Mentor PM team and align design, engineering, analytics, and economy stakeholders.</li>
@@ -528,14 +557,14 @@
                         </ul>
                     </div>
                     <div class="compact-section">
-                        <h5>King · Product Manager (2021–2023)</h5>
+                        <h5><a class="company-link" href="https://www.king.com/" target="_blank" rel="noopener noreferrer">King</a> · Product Manager (2021–2023)</h5>
                         <ul>
                             <li>Drove acquisition and retention initiatives with +8% business impact.</li>
                             <li>Ran experimentation cycles and ad strategy collaboration with marketing teams.</li>
                         </ul>
                     </div>
                     <div class="compact-section">
-                        <h5>Playtomic · Product Manager (2021)</h5>
+                        <h5><a class="company-link" href="https://playtomic.com/" target="_blank" rel="noopener noreferrer">Playtomic</a> · Product Manager (2021)</h5>
                         <ul>
                             <li>Launched Social vertical and scaled to 500k MAU.</li>
                             <li>Improved discovery process and analytics instrumentation.</li>
@@ -551,7 +580,7 @@
                         <article class="project-deep-card">
                             <img src="candy.jpg" alt="Candy Crush Soda project" />
                             <div class="content">
-                                <h5>Candy Crush Soda</h5>
+                                <h5><a class="company-link" href="https://www.king.com/game/candycrushsoda" target="_blank" rel="noopener noreferrer">Candy Crush Soda</a></h5>
                                 <p>Owned core gameplay strategy and segmentation roadmap for one of the world’s top puzzle games.</p>
                                 <ul>
                                     <li>Built ML-informed player challenges and progression personalization.</li>
@@ -564,7 +593,7 @@
                         <article class="project-deep-card">
                             <img src="playtomic.jpg" alt="Playtomic Social project" />
                             <div class="content">
-                                <h5>Playtomic Social</h5>
+                                <h5><a class="company-link" href="https://playtomic.com/" target="_blank" rel="noopener noreferrer">Playtomic Social</a></h5>
                                 <p>Designed and launched the social interaction layer to increase player engagement and retention.</p>
                                 <ul>
                                     <li>Defined vision, MVP scope, and rollout plan across iOS/Android.</li>
@@ -577,7 +606,7 @@
                         <article class="project-deep-card">
                             <img src="tomsfive.jpg" alt="Tomsfive project" />
                             <div class="content">
-                                <h5>Tomsfive SaaS</h5>
+                                <h5><a class="company-link" href="https://tomsfive.com/" target="_blank" rel="noopener noreferrer">Tomsfive SaaS</a></h5>
                                 <p>Shaped the B2B product strategy and prioritization model for a growing startup platform.</p>
                                 <ul>
                                     <li>Introduced RICE prioritization and roadmap governance.</li>
@@ -590,7 +619,7 @@
                         <article class="project-deep-card">
                             <img src="allianz.jpg" alt="Allianz enterprise project" />
                             <div class="content">
-                                <h5>Allianz Technology</h5>
+                                <h5><a class="company-link" href="https://www.allianz.com/" target="_blank" rel="noopener noreferrer">Allianz Technology</a></h5>
                                 <p>Enterprise product ownership across distributed stakeholders and large-scale delivery timelines.</p>
                                 <ul>
                                     <li>Managed 200+ user stories and release prioritization.</li>
