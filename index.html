@@ -121,19 +121,38 @@
             justify-content: flex-end;
             gap: 0.6rem;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
-        .top-nav span {
+        .tab-btn {
             font-size: 0.85rem;
             color: var(--muted);
             padding: 0.45rem 0.9rem;
             border-radius: 10px;
+            border: 1px solid var(--line);
+            background: #fff;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
         }
 
-        .top-nav .active {
+        .tab-btn:hover {
+            border-color: #c0d0ea;
+            color: #1e3a8a;
+        }
+
+        .tab-btn.active {
             background: var(--brand-700);
             color: #fff;
-            font-weight: 600;
+            border-color: var(--brand-700);
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
         }
 
         .hero {
@@ -260,6 +279,87 @@
             color: var(--muted);
         }
 
+
+        .compact-section {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: #fbfdff;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .compact-section h5 {
+            font-size: 1.05rem;
+            margin-bottom: 0.6rem;
+            color: #1e293b;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tags span {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.65rem;
+            background: #eaf1ff;
+            color: #1e3a8a;
+            border-radius: 999px;
+            border: 1px solid #cbdcfb;
+            font-weight: 600;
+        }
+
+        .project-deep-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .project-deep-card {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+        }
+
+        .project-deep-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .project-deep-card .content {
+            padding: 0.9rem;
+        }
+
+        .project-deep-card h5 {
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .project-deep-card p {
+            font-size: 0.92rem;
+            color: var(--muted);
+            margin-bottom: 0.7rem;
+        }
+
+        .project-deep-card ul {
+            padding-left: 1.1rem;
+            display: grid;
+            gap: 0.35rem;
+            color: #334155;
+            font-size: 0.9rem;
+            line-height: 1.3;
+            margin-bottom: 0.1rem;
+        }
+
+        .showcase-card span {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
         @media (max-width: 1080px) {
             .shell {
                 grid-template-columns: 1fr;
@@ -271,6 +371,25 @@
 
             .showcase-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+
+        @media (max-width: 1080px) {
+            .shell {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .project-deep-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -325,77 +444,207 @@
         </aside>
 
         <main>
-            <div class="top-nav" aria-label="sections">
-                <span>Resume</span>
-                <span>Projects</span>
-                <span class="active">Highlights</span>
+            <div class="top-nav" aria-label="sections" role="tablist">
+                <button class="tab-btn" data-tab="resume-panel" role="tab" aria-selected="false">Resume</button>
+                <button class="tab-btn" data-tab="projects-panel" role="tab" aria-selected="false">Projects</button>
+                <button class="tab-btn active" data-tab="highlights-panel" role="tab" aria-selected="true">Highlights</button>
+            </div>
+        </aside>
+
+            <div id="highlights-panel" class="tab-panel active" role="tabpanel">
+                <section class="hero">
+                    <div>
+                        <h2>Executive González</h2>
+                        <h3>Associate Product Director</h3>
+                        <p>
+                            Product leader with 6+ years driving growth in gaming and SaaS. I build strategy, empower teams,
+                            and deliver measurable outcomes through experimentation, machine learning, and clear product vision.
+                        </p>
+                    </div>
+                    <div class="hero-card">
+                        <img src="candy.jpg" alt="Candy Crush Soda showcase" />
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h4>Experience</h4>
+                    <div class="experience-grid">
+                        <article class="experience-card">
+                            <h5>King</h5>
+                            <span class="date">Associate Product Director · 2023–Present</span>
+                            <ul>
+                                <li>Led ML-driven segmentation and challenge roadmap for Candy Crush Soda.</li>
+                                <li>Managed PMs and cross-functional squads across discovery to delivery.</li>
+                                <li>Generated +10% revenue impact in fiscal year outcomes.</li>
+                            </ul>
+                        </article>
+
+                        <article class="experience-card">
+                            <h5>Playtomic</h5>
+                            <span class="date">Product Manager · 2021</span>
+                            <ul>
+                                <li>Launched Social vertical and scaled to 500k MAU.</li>
+                                <li>Introduced product discovery rituals and experimentation.</li>
+                                <li>Improved retention and activation with analytics-led prioritization.</li>
+                            </ul>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h4>Product Showcase</h4>
+                    <div class="showcase-grid">
+                        <article class="showcase-card">
+                            <img src="candy.jpg" alt="Candy Crush" />
+                            <div class="meta"><strong>Candy Crush Soda</strong><span>Gaming / ML</span></div>
+                        </article>
+                        <article class="showcase-card">
+                            <img src="playtomic.jpg" alt="Playtomic" />
+                            <div class="meta"><strong>Playtomic Social</strong><span>Social / Mobile</span></div>
+                        </article>
+                        <article class="showcase-card">
+                            <img src="tomsfive.jpg" alt="Tomsfive" />
+                            <div class="meta"><strong>Tomsfive</strong><span>SaaS Platform</span></div>
+                        </article>
+                        <article class="showcase-card">
+                            <img src="allianz.jpg" alt="Allianz" />
+                            <div class="meta"><strong>Allianz Technology</strong><span>Enterprise Product</span></div>
+                        </article>
+                        <article class="showcase-card">
+                            <img src="playtomic.jpg" alt="Portfolio Detail" />
+                            <div class="meta"><strong>Project Detail</strong><span>Case Study</span></div>
+                        </article>
+                    </div>
+                </section>
             </div>
 
-            <section class="hero">
-                <div>
-                    <h2>Executive González</h2>
-                    <h3>Associate Product Director</h3>
-                    <p>
-                        Product leader with 6+ years driving growth in gaming and SaaS. I build strategy, empower teams,
-                        and deliver measurable outcomes through experimentation, machine learning, and clear product vision.
-                    </p>
-                </div>
-                <div class="hero-card">
-                    <img src="candy.jpg" alt="Candy Crush Soda showcase" />
-                </div>
-            </section>
+            <div id="resume-panel" class="tab-panel" role="tabpanel">
+                <section class="section">
+                    <h4>Executive Profile</h4>
+                    <div class="compact-section">
+                        Strategic <strong>Product Leader</strong> with 6+ years of experience driving growth and scaling user bases in
+                        <strong>Gaming and SaaS</strong>. Proven record defining vision, leading international squads, and shipping
+                        high-impact initiatives at King and Playtomic.
+                    </div>
+                </section>
 
-            <section class="section">
-                <h4>Experience</h4>
-                <div class="experience-grid">
-                    <article class="experience-card">
-                        <h5>King</h5>
-                        <span class="date">Associate Product Director · 2023–Present</span>
+                <section class="section">
+                    <h4>Core Competencies</h4>
+                    <div class="tags">
+                        <span>Product Strategy</span><span>Team Leadership</span><span>Monetization & Growth</span>
+                        <span>Machine Learning</span><span>A/B Testing</span><span>Data Analysis (SQL, Python)</span>
+                        <span>Stakeholder Management</span><span>Mobile Gaming (B2C)</span><span>SaaS (B2B)</span>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h4>Professional Experience</h4>
+                    <div class="compact-section">
+                        <h5>King · Associate Product Director (2023–Present)</h5>
                         <ul>
-                            <li>Led ML-driven segmentation and challenge roadmap for Candy Crush Soda.</li>
-                            <li>Managed PMs and cross-functional squads across discovery to delivery.</li>
-                            <li>Generated +10% revenue impact in fiscal year outcomes.</li>
+                            <li>Lead challenge-based roadmap and ML segmentation for Candy Crush Soda.</li>
+                            <li>Mentor PM team and align design, engineering, analytics, and economy stakeholders.</li>
+                            <li>Delivered +10% revenue uplift through monetization and gameplay improvements.</li>
                         </ul>
-                    </article>
-
-                    <article class="experience-card">
-                        <h5>Playtomic</h5>
-                        <span class="date">Product Manager · 2021</span>
+                    </div>
+                    <div class="compact-section">
+                        <h5>King · Product Manager (2021–2023)</h5>
+                        <ul>
+                            <li>Drove acquisition and retention initiatives with +8% business impact.</li>
+                            <li>Ran experimentation cycles and ad strategy collaboration with marketing teams.</li>
+                        </ul>
+                    </div>
+                    <div class="compact-section">
+                        <h5>Playtomic · Product Manager (2021)</h5>
                         <ul>
                             <li>Launched Social vertical and scaled to 500k MAU.</li>
-                            <li>Introduced product discovery rituals and experimentation.</li>
-                            <li>Improved retention and activation with analytics-led prioritization.</li>
+                            <li>Improved discovery process and analytics instrumentation.</li>
                         </ul>
-                    </article>
-                </div>
-            </section>
+                    </div>
+                </section>
+            </div>
 
-            <section class="section">
-                <h4>Product Showcase</h4>
-                <div class="showcase-grid">
-                    <article class="showcase-card">
-                        <img src="candy.jpg" alt="Candy Crush" />
-                        <div class="meta"><strong>Candy Crush Soda</strong><span>Gaming / ML</span></div>
-                    </article>
-                    <article class="showcase-card">
-                        <img src="playtomic.jpg" alt="Playtomic" />
-                        <div class="meta"><strong>Playtomic Social</strong><span>Social / Mobile</span></div>
-                    </article>
-                    <article class="showcase-card">
-                        <img src="tomsfive.jpg" alt="Tomsfive" />
-                        <div class="meta"><strong>Tomsfive</strong><span>SaaS Platform</span></div>
-                    </article>
-                    <article class="showcase-card">
-                        <img src="allianz.jpg" alt="Allianz" />
-                        <div class="meta"><strong>Allianz Technology</strong><span>Enterprise Product</span></div>
-                    </article>
-                    <article class="showcase-card">
-                        <img src="playtomic.jpg" alt="Portfolio Detail" />
-                        <div class="meta"><strong>Project Detail</strong><span>Case Study</span></div>
-                    </article>
-                </div>
-            </section>
+            <div id="projects-panel" class="tab-panel" role="tabpanel">
+                <section class="section">
+                    <h4>Projects · Extended Portfolio</h4>
+                    <div class="project-deep-grid">
+                        <article class="project-deep-card">
+                            <img src="candy.jpg" alt="Candy Crush Soda project" />
+                            <div class="content">
+                                <h5>Candy Crush Soda</h5>
+                                <p>Owned core gameplay strategy and segmentation roadmap for one of the world’s top puzzle games.</p>
+                                <ul>
+                                    <li>Built ML-informed player challenges and progression personalization.</li>
+                                    <li>Improved monetization through store/event optimization.</li>
+                                    <li>Partnered with economy, UA, and live-ops teams.</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="project-deep-card">
+                            <img src="playtomic.jpg" alt="Playtomic Social project" />
+                            <div class="content">
+                                <h5>Playtomic Social</h5>
+                                <p>Designed and launched the social interaction layer to increase player engagement and retention.</p>
+                                <ul>
+                                    <li>Defined vision, MVP scope, and rollout plan across iOS/Android.</li>
+                                    <li>Scaled to 500k MAU with strong collaboration loops and invitations.</li>
+                                    <li>Set product analytics framework for activation and retention.</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="project-deep-card">
+                            <img src="tomsfive.jpg" alt="Tomsfive project" />
+                            <div class="content">
+                                <h5>Tomsfive SaaS</h5>
+                                <p>Shaped the B2B product strategy and prioritization model for a growing startup platform.</p>
+                                <ul>
+                                    <li>Introduced RICE prioritization and roadmap governance.</li>
+                                    <li>Defined value proposition and onboarding journey.</li>
+                                    <li>Improved feature adoption with structured feedback loops.</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="project-deep-card">
+                            <img src="allianz.jpg" alt="Allianz enterprise project" />
+                            <div class="content">
+                                <h5>Allianz Technology</h5>
+                                <p>Enterprise product ownership across distributed stakeholders and large-scale delivery timelines.</p>
+                                <ul>
+                                    <li>Managed 200+ user stories and release prioritization.</li>
+                                    <li>Aligned Paris and Barcelona business stakeholders.</li>
+                                    <li>Supported delivery quality with clear acceptance criteria.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
         </main>
     </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.tab-btn');
+        const panels = document.querySelectorAll('.tab-panel');
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const target = button.dataset.tab;
+
+                buttons.forEach((btn) => {
+                    const active = btn === button;
+                    btn.classList.toggle('active', active);
+                    btn.setAttribute('aria-selected', active ? 'true' : 'false');
+                });
+
+                panels.forEach((panel) => {
+                    panel.classList.toggle('active', panel.id === target);
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
