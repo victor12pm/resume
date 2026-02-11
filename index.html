@@ -1,543 +1,401 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Victor Gonzalez | Product Director</title>
     <style>
         :root {
-            --primary: #2563eb;       /* Royal Blue */
-            --primary-dark: #1e3a8a;  /* Deep Blue */
-            --text-main: #0f172a;     /* Slate 900 */
-            --text-secondary: #475569;/* Slate 600 */
-            --bg-body: #f1f5f9;       /* Light Gray */
-            --bg-card: #ffffff;
-            --accent: #3b82f6;
+            --bg: #e8edf5;
+            --surface: #ffffff;
+            --ink: #0f172a;
+            --muted: #475569;
+            --brand-900: #0a1c48;
+            --brand-700: #1e3a8a;
+            --brand-500: #2f5bd4;
+            --line: #dbe4f2;
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
+            font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: radial-gradient(circle at top, #f5f7fb 0%, var(--bg) 55%);
+            color: var(--ink);
+            padding: 2rem;
         }
 
-        /* Hero Section - The "Executive" Look */
-        header {
-            background: linear-gradient(135deg, var(--text-main) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 5rem 2rem;
-            text-align: center;
+        .shell {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--surface);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 70px rgba(15, 23, 42, 0.18);
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 85vh;
         }
 
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            font-weight: 300;
+        aside {
+            background: linear-gradient(160deg, var(--brand-900), var(--brand-700));
             color: #e2e8f0;
-            margin-bottom: 2rem;
-            letter-spacing: 0.5px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
+        .identity h1 {
+            font-size: 1.9rem;
+            color: #fff;
+            margin-bottom: 0.35rem;
+            letter-spacing: -0.02em;
+        }
+
+        .identity p {
+            color: #cbd5e1;
             font-size: 1rem;
         }
 
-        .contact-info a {
-            color: #bfdbfe;
+        .side-block {
+            border-top: 1px solid rgba(203, 213, 225, 0.35);
+            padding-top: 1.15rem;
+        }
+
+        .side-block h2 {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
+
+        .contact-list,
+        .edu-list,
+        .skills-list {
+            display: grid;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-list a {
+            color: #e2e8f0;
             text-decoration: none;
-            transition: color 0.2s;
+        }
+
+        .skill-row {
+            display: grid;
+            gap: 0.3rem;
+        }
+
+        .skill-row span {
+            font-size: 0.86rem;
+        }
+
+        .bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(148, 163, 184, 0.3);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .bar i {
+            display: block;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #8fb7ff, #dbeafe);
+        }
+
+        main {
+            padding: 2.2rem 2.4rem;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .top-nav span {
+            font-size: 0.85rem;
+            color: var(--muted);
+            padding: 0.45rem 0.9rem;
+            border-radius: 10px;
+        }
+
+        .top-nav .active {
+            background: var(--brand-700);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 1.4rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.45rem;
+        }
+
+        .hero h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .hero p {
+            color: var(--muted);
+            line-height: 1.7;
+            max-width: 60ch;
+        }
+
+        .hero-card {
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            overflow: hidden;
+            min-height: 220px;
+            background: #f8fafc;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-        }
-
-        .contact-info a:hover {
-            color: white;
-        }
-
-        /* Tabs */
-        .tabs {
-            display: flex;
-            gap: 0.75rem;
             justify-content: center;
-            margin: 1.5rem 0 2rem;
-            flex-wrap: wrap;
+            padding: 0.8rem;
         }
 
-        .tab-button {
-            border: 1px solid #dbeafe;
-            background: #eff6ff;
-            color: var(--primary-dark);
-            padding: 0.5rem 1.25rem;
-            border-radius: 999px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
+        .hero-card img {
+            width: 100%;
+            height: 100%;
+            max-height: 230px;
+            object-fit: cover;
+            border-radius: 12px;
         }
 
-        .tab-button:hover {
-            background: #dbeafe;
+        .section {
+            margin-bottom: 2rem;
         }
 
-        .tab-button.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
+        .section h4 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
 
-        .tab-panel {
-            display: none;
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
         }
 
-        .tab-panel.active {
+        .experience-card {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 1rem;
+            background: #fbfdff;
+        }
+
+        .experience-card h5 {
+            font-size: 1.65rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .experience-card .date {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.65rem;
             display: block;
         }
 
-        /* Layout */
-        .container {
-            max-width: 900px;
-            margin: -3rem auto 0; /* Overlap the header */
-            padding: 0 1.5rem 3rem;
-            position: relative;
+        .experience-card ul {
+            padding-left: 1.1rem;
+            color: #334155;
+            display: grid;
+            gap: 0.35rem;
         }
 
-        section {
-            background: var(--bg-card);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-
-        h2 {
-            color: var(--text-main);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid #e2e8f0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--text-secondary);
-        }
-
-        /* Competencies Tags */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(110px, 1fr));
             gap: 0.8rem;
         }
 
-        .skill-tag {
-            background-color: #eff6ff;
-            color: var(--primary-dark);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid #dbeafe;
+        .showcase-card {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            overflow: hidden;
+            background: #fff;
         }
 
-        /* Experience Cards */
-        .job {
-            margin-bottom: 2.5rem;
-            position: relative;
-        }
-
-        .job:last-child { margin-bottom: 0; }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.8rem;
-        }
-
-        .role-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .role {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        /* Links styling */
-        a.org-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        a.org-link:hover {
-            text-decoration: underline;
-            color: var(--primary-dark);
-        }
-        
-        .company-text {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .date {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            background: #f1f5f9;
-            padding: 0.25rem 0.75rem;
-            border-radius: 6px;
-            white-space: nowrap;
-        }
-
-        .job ul {
-            list-style: none;
-            padding-left: 0.5rem;
-        }
-
-        .job li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.6rem;
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        .job li::before {
-            content: "→";
-            color: var(--primary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        /* Products grid */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .product-card {
-            background: #f8fafc;
-            border-radius: 12px;
-            padding: 1rem;
-            border: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .product-card img {
+        .showcase-card img {
             width: 100%;
-            height: 160px;
+            height: 135px;
             object-fit: cover;
-            border-radius: 10px;
-            border: 1px solid #e2e8f0;
         }
 
-        .product-card h3 {
-            font-size: 1rem;
-            color: var(--text-main);
+        .showcase-card .meta {
+            padding: 0.65rem;
         }
 
-        .product-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Education Grid */
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .edu-card {
-            padding: 1rem;
-            border-left: 3px solid var(--primary);
-            background: #f8fafc;
-        }
-
-        .edu-school a {
-            color: var(--text-main);
-            font-weight: 700;
-            text-decoration: none;
+        .showcase-card strong {
             display: block;
-            margin-bottom: 0.25rem;
-        }
-        
-        .edu-school a:hover {
-             color: var(--primary);
-        }
-
-        .edu-degree {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .edu-year {
-            font-size: 0.8rem;
-            color: #94a3b8;
-            margin-top: 0.5rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-secondary);
             font-size: 0.9rem;
+            line-height: 1.3;
+            margin-bottom: 0.1rem;
         }
 
-        /* Mobile tweaks */
-        @media (max-width: 640px) {
-            h1 { font-size: 2.2rem; }
-            .job-header { flex-direction: column; gap: 0.5rem; }
-            .container { margin-top: -1rem; }
+        .showcase-card span {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 1080px) {
+            .shell {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 720px) {
+            body { padding: 1rem; }
+            aside, main { padding: 1.2rem; }
+            .hero h2 { font-size: 2.2rem; }
+            .hero h3 { font-size: 1.45rem; }
+            .section h4 { font-size: 1.55rem; }
+            .experience-grid { grid-template-columns: 1fr; }
+            .showcase-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+    <div class="shell">
+        <aside>
+            <div class="identity">
+                <h1>Victor González</h1>
+                <p>Associate Product Director</p>
+            </div>
 
-    <header>
-        <h1>Victor Gonzalez</h1>
-        <div class="subtitle">Associate Product Director</div>
-        <div class="contact-info">
-            <a href="mailto:vgonzalezc90@gmail.com">✉️ vgonzalezc90@gmail.com</a>
-            <a href="https://www.linkedin.com/in/vgonzalezcorbacho/" target="_blank">🔗 LinkedIn</a>
-            <span>📍 Remote / Barcelona</span>
-        </div>
-    </header>
+            <div class="side-block">
+                <h2>Contact</h2>
+                <div class="contact-list">
+                    <a href="mailto:vgonzalezc90@gmail.com">✉️ vgonzalezc90@gmail.com</a>
+                    <span>📞 +34 000 000 000</span>
+                    <a href="https://www.linkedin.com/in/vgonzalezcorbacho/" target="_blank">🔗 LinkedIn</a>
+                    <span>📍 Barcelona / Remote</span>
+                </div>
+            </div>
 
-    <div class="container">
-        <div class="tabs" role="tablist" aria-label="Resume tabs">
-            <button class="tab-button active" type="button" role="tab" aria-selected="true" aria-controls="resume-tab" data-tab="resume-tab">Resume</button>
-            <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="products-tab" data-tab="products-tab">Products</button>
-        </div>
+            <div class="side-block">
+                <h2>Skills</h2>
+                <div class="skills-list">
+                    <div class="skill-row"><span>Product Strategy</span><div class="bar"><i style="width:95%"></i></div></div>
+                    <div class="skill-row"><span>Leadership</span><div class="bar"><i style="width:92%"></i></div></div>
+                    <div class="skill-row"><span>Monetization</span><div class="bar"><i style="width:90%"></i></div></div>
+                    <div class="skill-row"><span>Experimentation</span><div class="bar"><i style="width:88%"></i></div></div>
+                    <div class="skill-row"><span>Analytics (SQL/Python)</span><div class="bar"><i style="width:86%"></i></div></div>
+                </div>
+            </div>
 
-        <div id="resume-tab" class="tab-panel active" role="tabpanel" aria-labelledby="resume-tab">
-            <section>
-                <h2>Executive Profile</h2>
-                <p style="font-size: 1.1rem; color: var(--text-main);">
-                    Strategic <strong>Product Leader</strong> with 6+ years of experience driving revenue growth and scaling user bases in the <strong>Gaming and SaaS</strong> industries. 
-                    Proven track record of defining product vision, leading cross-functional international teams, and executing high-impact strategies at top-tier companies like King and Playtomic. 
-                    Passionate about combining <strong>Machine Learning</strong> and <strong>Data Analysis</strong> to solve complex user challenges.
-                </p>
-            </section>
+            <div class="side-block">
+                <h2>Education</h2>
+                <div class="edu-list">
+                    <span><strong>MBA</strong> · EAE Business School</span>
+                    <span><strong>Bachelor in Economics</strong> · UOC</span>
+                    <span><strong>PM Foundation</strong> · Mind the Product</span>
+                </div>
+            </div>
+        </aside>
 
-            <section>
-                <h2>Core Competencies</h2>
-                <div class="skills-grid">
-                    <span class="skill-tag">Product Strategy</span>
-                    <span class="skill-tag">Team Leadership</span>
-                    <span class="skill-tag">Monetization & Growth</span>
-                    <span class="skill-tag">Machine Learning (ML)</span>
-                    <span class="skill-tag">A/B Testing & Experimentation</span>
-                    <span class="skill-tag">Data Analysis (SQL, Python)</span>
-                    <span class="skill-tag">Stakeholder Management</span>
-                    <span class="skill-tag">Mobile Gaming (B2C)</span>
-                    <span class="skill-tag">SaaS (B2B)</span>
+        <main>
+            <div class="top-nav" aria-label="sections">
+                <span>Resume</span>
+                <span>Projects</span>
+                <span class="active">Highlights</span>
+            </div>
+
+            <section class="hero">
+                <div>
+                    <h2>Executive González</h2>
+                    <h3>Associate Product Director</h3>
+                    <p>
+                        Product leader with 6+ years driving growth in gaming and SaaS. I build strategy, empower teams,
+                        and deliver measurable outcomes through experimentation, machine learning, and clear product vision.
+                    </p>
+                </div>
+                <div class="hero-card">
+                    <img src="candy.jpg" alt="Candy Crush Soda showcase" />
                 </div>
             </section>
 
-            <section>
-                <h2>Professional Experience</h2>
+            <section class="section">
+                <h4>Experience</h4>
+                <div class="experience-grid">
+                    <article class="experience-card">
+                        <h5>King</h5>
+                        <span class="date">Associate Product Director · 2023–Present</span>
+                        <ul>
+                            <li>Led ML-driven segmentation and challenge roadmap for Candy Crush Soda.</li>
+                            <li>Managed PMs and cross-functional squads across discovery to delivery.</li>
+                            <li>Generated +10% revenue impact in fiscal year outcomes.</li>
+                        </ul>
+                    </article>
 
-                <div class="job">
-                    <div class="job-header">
-                        <div class="role-group">
-                            <span class="role">Associate Product Director</span>
-                            <a href="https://www.king.com/" target="_blank" class="org-link">King</a>
-                        </div>
-                        <span class="date">June 2023 – Present</span>
-                    </div>
-                    <ul>
-                        <li><strong>Strategic Leadership:</strong> Lead a cross-functional organization focused on player segmentation and challenge-based features, integrating advanced <strong>ML Models</strong>.</li>
-                        <li><strong>Team Management:</strong> Directly manage and mentor 2 Product Managers, overseeing discovery, delivery, and career development.</li>
-                        <li><strong>Revenue Impact:</strong> Delivered a <strong>+10% revenue increase</strong> (multi-million dollar impact) for the 2024-25 FY by optimizing game economy and features.</li>
-                        <li><strong>Vision:</strong> Define and own the Product Strategy and Vision for <em>Candy Crush Soda's</em> Core Gameplay.</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div class="role-group">
-                            <span class="role">Product Manager</span>
-                            <a href="https://www.king.com/" target="_blank" class="org-link">King</a>
-                        </div>
-                        <span class="date">Nov 2021 – June 2023</span>
-                    </div>
-                    <ul>
-                        <li><strong>Growth & Acquisition:</strong> Spearheaded features to acquire, retain, and monetize new players, achieving an <strong>+8% impact</strong> in FY 2023-24.</li>
-                        <li><strong>Cross-Functional Collaboration:</strong> Orchestrated ad strategy in partnership with Performance Marketing teams.</li>
-                        <li><strong>Experimentation:</strong> Led rigorous A/B testing and data analysis to validate hypotheses and drive product decisions.</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div class="role-group">
-                            <span class="role">Product Manager</span>
-                            <a href="https://playtomic.com/" target="_blank" class="org-link">Playtomic</a>
-                        </div>
-                        <span class="date">Feb 2021 – Nov 2021</span>
-                    </div>
-                    <ul>
-                        <li><strong>Product Launch:</strong> Led the end-to-end launch of the app's "Social" vertical, successfully scaling to <strong>500k Monthly Active Users (MAU)</strong>.</li>
-                        <li><strong>Process Improvement:</strong> Introduced modern product discovery techniques to the team, enhancing delivery speed and quality.</li>
-                        <li><strong>Analytics:</strong> Managed data pipelines and user behavior tracking via Mixpanel.</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div class="role-group">
-                            <span class="role">Product Manager</span>
-                            <a href="https://tomsfive.com/" target="_blank" class="org-link">tomsfive</a>
-                        </div>
-                        <span class="date">Feb 2020 – Feb 2021</span>
-                    </div>
-                    <ul>
-                        <li><strong>Prioritization:</strong> Managed the backlog for a SaaS startup using the <strong>RICE scoring</strong> framework to maximize development ROI.</li>
-                        <li><strong>Strategy:</strong> Developed the User Value Proposition Canvas and defined the initial Product Vision & Mission.</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div class="role-group">
-                            <span class="role">Product Owner</span>
-                            <a href="https://www.allianz.com/" target="_blank" class="org-link">Allianz Technology</a>
-                        </div>
-                        <span class="date">Aug 2019 – Mar 2020</span>
-                    </div>
-                    <ul>
-                        <li>Managed complex stakeholder relationships between Paris and Barcelona HQs.</li>
-                        <li>Defined and prioritized 200+ user stories for development teams.</li>
-                    </ul>
-                </div>
-                
-                 <div class="job">
-                    <div class="job-header">
-                        <div class="role-group">
-                            <span class="role">Co-Founder</span>
-                            <span class="company-text">SapbéServeis</span>
-                        </div>
-                        <span class="date">Jan 2015 – July 2017</span>
-                    </div>
-                    <ul>
-                        <li>Founded and managed product development for a local SaaS solution.</li>
-                    </ul>
+                    <article class="experience-card">
+                        <h5>Playtomic</h5>
+                        <span class="date">Product Manager · 2021</span>
+                        <ul>
+                            <li>Launched Social vertical and scaled to 500k MAU.</li>
+                            <li>Introduced product discovery rituals and experimentation.</li>
+                            <li>Improved retention and activation with analytics-led prioritization.</li>
+                        </ul>
+                    </article>
                 </div>
             </section>
 
-            <section>
-                <h2>Education & Certifications</h2>
-                <div class="education-grid">
-                    <div class="edu-card">
-                        <div class="edu-school"><a href="https://www.eae.es/" target="_blank">EAE Business School</a></div>
-                        <div class="edu-degree">Master in Business Administration (MBA)</div>
-                        <div class="edu-year">2018</div>
-                    </div>
-                     <div class="edu-card">
-                        <div class="edu-school"><a href="https://www.uoc.edu/" target="_blank">UOC</a></div>
-                        <div class="edu-degree">Bachelor's Degree in Economics</div>
-                        <div class="edu-year">2023</div>
-                    </div>
-                    <div class="edu-card">
-                        <div class="edu-school"><a href="https://www.mindtheproduct.com/" target="_blank">Mind the Product</a></div>
-                        <div class="edu-degree">PM Foundation Certificate</div>
-                        <div class="edu-year">2019</div>
-                    </div>
-                    <div class="edu-card">
-                        <div class="edu-school"><a href="https://www.udemy.com/" target="_blank">Udemy</a></div>
-                        <div class="edu-degree">Python for Developers</div>
-                        <div class="edu-year">2020</div>
-                    </div>
-                    <div class="edu-card">
-                        <div class="edu-school"><a href="https://www.udemy.com/" target="_blank">Udemy</a></div>
-                        <div class="edu-degree">SQL Data Analysis</div>
-                        <div class="edu-year">2019</div>
-                    </div>
+            <section class="section">
+                <h4>Product Showcase</h4>
+                <div class="showcase-grid">
+                    <article class="showcase-card">
+                        <img src="candy.jpg" alt="Candy Crush" />
+                        <div class="meta"><strong>Candy Crush Soda</strong><span>Gaming / ML</span></div>
+                    </article>
+                    <article class="showcase-card">
+                        <img src="playtomic.jpg" alt="Playtomic" />
+                        <div class="meta"><strong>Playtomic Social</strong><span>Social / Mobile</span></div>
+                    </article>
+                    <article class="showcase-card">
+                        <img src="tomsfive.jpg" alt="Tomsfive" />
+                        <div class="meta"><strong>Tomsfive</strong><span>SaaS Platform</span></div>
+                    </article>
+                    <article class="showcase-card">
+                        <img src="allianz.jpg" alt="Allianz" />
+                        <div class="meta"><strong>Allianz Technology</strong><span>Enterprise Product</span></div>
+                    </article>
+                    <article class="showcase-card">
+                        <img src="playtomic.jpg" alt="Portfolio Detail" />
+                        <div class="meta"><strong>Project Detail</strong><span>Case Study</span></div>
+                    </article>
                 </div>
             </section>
-        </div>
-
-        <div id="products-tab" class="tab-panel" role="tabpanel" aria-labelledby="products-tab">
-            <section>
-                <h2>Product Showcase</h2>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <img src="candy.jpg" alt="Candy Crush Soda gameplay">
-                        <h3>Candy Crush Soda</h3>
-                        <p>Core gameplay initiatives with segmentation, challenges, and ML-driven personalization.</p>
-                    </div>
-                    <div class="product-card">
-                        <img src="playtomic.jpg" alt="Playtomic app experience">
-                        <h3>Playtomic Social</h3>
-                        <p>Launched the Social vertical, scaling engagement for the community experience.</p>
-                    </div>
-                    <div class="product-card">
-                        <img src="tomsfive.jpg" alt="Tomsfive platform experience">
-                        <h3>tomsfive</h3>
-                        <p>SaaS experience design with roadmap prioritization and product vision.</p>
-                    </div>
-                    <div class="product-card">
-                        <img src="allianz.jpg" alt="Allianz Technology product work">
-                        <h3>Allianz Technology</h3>
-                        <p>Enterprise product ownership with multi-stakeholder alignment and delivery.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
+        </main>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Victor Gonzalez Corbacho. Built with simple HTML & CSS.</p>
-    </footer>
-
-    <script>
-        const tabButtons = document.querySelectorAll(".tab-button");
-        const tabPanels = document.querySelectorAll(".tab-panel");
-
-        tabButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                const target = button.dataset.tab;
-
-                tabButtons.forEach((btn) => {
-                    const isActive = btn === button;
-                    btn.classList.toggle("active", isActive);
-                    btn.setAttribute("aria-selected", isActive ? "true" : "false");
-                });
-
-                tabPanels.forEach((panel) => {
-                    panel.classList.toggle("active", panel.id === target);
-                });
-            });
-        });
-    </script>
-
 </body>
 </html>
