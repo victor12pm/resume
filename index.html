@@ -1,416 +1,628 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Victor Gonzalez | Product Director</title>
     <style>
         :root {
-            --primary: #2563eb;       /* Royal Blue */
-            --primary-dark: #1e3a8a;  /* Deep Blue */
-            --text-main: #0f172a;     /* Slate 900 */
-            --text-secondary: #475569;/* Slate 600 */
-            --bg-body: #f1f5f9;       /* Light Gray */
-            --bg-card: #ffffff;
-            --accent: #3b82f6;
+            --bg: #e8edf5;
+            --surface: #ffffff;
+            --ink: #0f172a;
+            --muted: #475569;
+            --brand-900: #0a1c48;
+            --brand-700: #1e3a8a;
+            --brand-500: #2f5bd4;
+            --line: #dbe4f2;
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
+            font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: radial-gradient(circle at top, #f5f7fb 0%, var(--bg) 55%);
+            color: var(--ink);
+            padding: 2rem;
         }
 
-        /* Hero Section - The "Executive" Look */
-        header {
-            background: linear-gradient(135deg, var(--text-main) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 5rem 2rem;
-            text-align: center;
+        .shell {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--surface);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 70px rgba(15, 23, 42, 0.18);
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 85vh;
         }
 
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            font-weight: 300;
+        aside {
+            background: linear-gradient(160deg, var(--brand-900), var(--brand-700));
             color: #e2e8f0;
-            margin-bottom: 2rem;
-            letter-spacing: 0.5px;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            font-size: 1rem;
-        }
-
-        .contact-info a {
-            color: #bfdbfe;
-            text-decoration: none;
-            transition: color 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .contact-info a:hover {
-            color: white;
-        }
-
-        /* Layout */
-        .container {
-            max-width: 900px;
-            margin: -3rem auto 0; /* Overlap the header */
-            padding: 0 1.5rem 3rem;
-            position: relative;
-        }
-
-        section {
-            background: var(--bg-card);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-
-        h2 {
-            color: var(--text-main);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid #e2e8f0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--text-secondary);
-        }
-
-        /* Competencies Tags */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .skill-tag {
-            background-color: #eff6ff;
-            color: var(--primary-dark);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid #dbeafe;
-        }
-
-        /* Experience Cards */
-        .job {
-            margin-bottom: 2.5rem;
-            position: relative;
-        }
-
-        .job:last-child { margin-bottom: 0; }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.8rem;
-        }
-
-        .role-group {
+            padding: 2rem;
             display: flex;
             flex-direction: column;
-        }
-
-        .role {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        /* Links styling */
-        a.org-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        a.org-link:hover {
-            text-decoration: underline;
-            color: var(--primary-dark);
-        }
-        
-        .company-text {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .date {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            background: #f1f5f9;
-            padding: 0.25rem 0.75rem;
-            border-radius: 6px;
-            white-space: nowrap;
-        }
-
-        .job ul {
-            list-style: none;
-            padding-left: 0.5rem;
-        }
-
-        .job li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.6rem;
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        .job li::before {
-            content: "→";
-            color: var(--primary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        /* Education Grid */
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 1.5rem;
         }
 
-        .edu-card {
-            padding: 1rem;
-            border-left: 3px solid var(--primary);
-            background: #f8fafc;
+        .identity h1 {
+            font-size: 1.9rem;
+            color: #fff;
+            margin-bottom: 0.35rem;
+            letter-spacing: -0.02em;
         }
 
-        .edu-school a {
-            color: var(--text-main);
-            font-weight: 700;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-        
-        .edu-school a:hover {
-             color: var(--primary);
+        .identity p {
+            color: #cbd5e1;
+            font-size: 1rem;
         }
 
-        .edu-degree {
-            color: var(--text-secondary);
+        .side-block {
+            border-top: 1px solid rgba(203, 213, 225, 0.35);
+            padding-top: 1.15rem;
+        }
+
+        .side-block h2 {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
+
+        .contact-list,
+        .edu-list,
+        .skills-list {
+            display: grid;
+            gap: 0.8rem;
             font-size: 0.95rem;
         }
 
-        .edu-year {
-            font-size: 0.8rem;
-            color: #94a3b8;
-            margin-top: 0.5rem;
+        .contact-list a {
+            color: #e2e8f0;
+            text-decoration: none;
         }
 
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-secondary);
+        .skill-row {
+            display: grid;
+            gap: 0.3rem;
+        }
+
+        .skill-row span {
+            font-size: 0.86rem;
+        }
+
+        .bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(148, 163, 184, 0.3);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .bar i {
+            display: block;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #8fb7ff, #dbeafe);
+        }
+
+        main {
+            padding: 2.2rem 2.4rem;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            font-size: 0.85rem;
+            color: var(--muted);
+            padding: 0.45rem 0.9rem;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+            background: #fff;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover {
+            border-color: #c0d0ea;
+            color: #1e3a8a;
+        }
+
+        .tab-btn.active {
+            background: var(--brand-700);
+            color: #fff;
+            border-color: var(--brand-700);
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 1.4rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.45rem;
+        }
+
+        .hero h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .hero p {
+            color: var(--muted);
+            line-height: 1.7;
+            max-width: 60ch;
+        }
+
+        .hero-card {
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            overflow: hidden;
+            min-height: 220px;
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem;
+        }
+
+        .hero-card img {
+            width: 100%;
+            height: 100%;
+            max-height: 230px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section h4 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .experience-card {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 1rem;
+            background: #fbfdff;
+        }
+
+        .experience-card h5 {
+            font-size: 1.65rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .experience-card .date {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.65rem;
+            display: block;
+        }
+
+        .experience-card ul {
+            padding-left: 1.1rem;
+            color: #334155;
+            display: grid;
+            gap: 0.35rem;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(110px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .showcase-card {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .showcase-card img {
+            width: 100%;
+            height: 135px;
+            object-fit: cover;
+        }
+
+        .showcase-card .meta {
+            padding: 0.65rem;
+        }
+
+        .showcase-card strong {
+            display: block;
+            font-size: 0.9rem;
+            line-height: 1.3;
+            margin-bottom: 0.1rem;
+        }
+
+        .showcase-card span {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+
+        .compact-section {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: #fbfdff;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .compact-section h5 {
+            font-size: 1.05rem;
+            margin-bottom: 0.6rem;
+            color: #1e293b;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tags span {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.65rem;
+            background: #eaf1ff;
+            color: #1e3a8a;
+            border-radius: 999px;
+            border: 1px solid #cbdcfb;
+            font-weight: 600;
+        }
+
+        .project-deep-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .project-deep-card {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+        }
+
+        .project-deep-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .project-deep-card .content {
+            padding: 0.9rem;
+        }
+
+        .project-deep-card h5 {
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .project-deep-card p {
+            font-size: 0.92rem;
+            color: var(--muted);
+            margin-bottom: 0.7rem;
+        }
+
+        .project-deep-card ul {
+            padding-left: 1.1rem;
+            display: grid;
+            gap: 0.35rem;
+            color: #334155;
             font-size: 0.9rem;
         }
 
-        /* Mobile tweaks */
-        @media (max-width: 640px) {
-            h1 { font-size: 2.2rem; }
-            .job-header { flex-direction: column; gap: 0.5rem; }
-            .container { margin-top: -1rem; }
+
+        @media (max-width: 1080px) {
+            .shell {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .project-deep-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 720px) {
+            body { padding: 1rem; }
+            aside, main { padding: 1.2rem; }
+            .hero h2 { font-size: 2.2rem; }
+            .hero h3 { font-size: 1.45rem; }
+            .section h4 { font-size: 1.55rem; }
+            .experience-grid { grid-template-columns: 1fr; }
+            .showcase-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>Victor Gonzalez</h1>
-        <div class="subtitle">Associate Product Director</div>
-        <div class="contact-info">
-            <a href="mailto:vgonzalezc90@gmail.com">✉️ vgonzalezc90@gmail.com</a>
-            <a href="https://www.linkedin.com/in/vgonzalezcorbacho/" target="_blank">🔗 LinkedIn</a>
-            <span>📍 Remote / Barcelona</span>
-        </div>
-    </header>
-
-    <div class="container">
-        
-        <section>
-            <h2>Executive Profile</h2>
-            <p style="font-size: 1.1rem; color: var(--text-main);">
-                Strategic <strong>Product Leader</strong> with 6+ years of experience driving revenue growth and scaling user bases in the <strong>Gaming and SaaS</strong> industries. 
-                Proven track record of defining product vision, leading cross-functional international teams, and executing high-impact strategies at top-tier companies like King and Playtomic. 
-                Passionate about combining <strong>Machine Learning</strong> and <strong>Data Analysis</strong> to solve complex user challenges.
-            </p>
-        </section>
-
-        <section>
-            <h2>Core Competencies</h2>
-            <div class="skills-grid">
-                <span class="skill-tag">Product Strategy</span>
-                <span class="skill-tag">Team Leadership</span>
-                <span class="skill-tag">Monetization & Growth</span>
-                <span class="skill-tag">Machine Learning (ML)</span>
-                <span class="skill-tag">A/B Testing & Experimentation</span>
-                <span class="skill-tag">Data Analysis (SQL, Python)</span>
-                <span class="skill-tag">Stakeholder Management</span>
-                <span class="skill-tag">Mobile Gaming (B2C)</span>
-                <span class="skill-tag">SaaS (B2B)</span>
+    <div class="shell">
+        <aside>
+            <div class="identity">
+                <h1>Victor González</h1>
+                <p>Associate Product Director</p>
             </div>
-        </section>
 
-        <section>
-            <h2>Professional Experience</h2>
+            <div class="side-block">
+                <h2>Contact</h2>
+                <div class="contact-list">
+                    <a href="mailto:vgonzalezc90@gmail.com">✉️ vgonzalezc90@gmail.com</a>
+                    <span>📞 +34 659826966</span>
+                    <a href="https://www.linkedin.com/in/vgonzalezcorbacho/" target="_blank">🔗 LinkedIn</a>
+                    <span>📍 Barcelona / Remote</span>
+                </div>
+            </div>
 
-            <div class="job">
-                <div class="job-header">
-                    <div class="role-group">
-                        <span class="role">Associate Product Director</span>
-                        <a href="https://www.king.com/" target="_blank" class="org-link">King</a>
+            <div class="side-block">
+                <h2>Skills</h2>
+                <div class="skills-list">
+                    <div class="skill-row"><span>Product Strategy</span><div class="bar"><i style="width:95%"></i></div></div>
+                    <div class="skill-row"><span>Leadership</span><div class="bar"><i style="width:92%"></i></div></div>
+                    <div class="skill-row"><span>Monetization</span><div class="bar"><i style="width:90%"></i></div></div>
+                    <div class="skill-row"><span>Experimentation</span><div class="bar"><i style="width:88%"></i></div></div>
+                    <div class="skill-row"><span>Analytics (SQL/Python)</span><div class="bar"><i style="width:86%"></i></div></div>
+                </div>
+            </div>
+
+            <div class="side-block">
+                <h2>Education</h2>
+                <div class="edu-list">
+                    <span><strong>MBA</strong> · EAE Business School</span>
+                    <span><strong>Bachelor in Economics</strong> · UOC</span>
+                    <span><strong>PM Foundation</strong> · Mind the Product</span>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="top-nav" aria-label="sections" role="tablist">
+                <button class="tab-btn active" data-tab="highlights-panel" role="tab" aria-selected="true">Highlights</button>
+                <button class="tab-btn" data-tab="resume-panel" role="tab" aria-selected="false">Resume</button>
+                <button class="tab-btn" data-tab="projects-panel" role="tab" aria-selected="false">Projects</button>
+            </div>
+
+            <div id="highlights-panel" class="tab-panel active" role="tabpanel">
+                <section class="hero">
+                    <div>
+                        <h2>Executive González</h2>
+                        <h3>Associate Product Director</h3>
+                        <p>
+                            Product leader with 6+ years driving growth in gaming and SaaS. I build strategy, empower teams,
+                            and deliver measurable outcomes through experimentation, machine learning, and clear product vision.
+                        </p>
                     </div>
-                    <span class="date">June 2023 – Present</span>
-                </div>
-                <ul>
-                    <li><strong>Strategic Leadership:</strong> Lead a cross-functional organization focused on player segmentation and challenge-based features, integrating advanced <strong>ML Models</strong>.</li>
-                    <li><strong>Team Management:</strong> Directly manage and mentor 2 Product Managers, overseeing discovery, delivery, and career development.</li>
-                    <li><strong>Revenue Impact:</strong> Delivered a <strong>+10% revenue increase</strong> (multi-million dollar impact) for the 2024-25 FY by optimizing game economy and features.</li>
-                    <li><strong>Vision:</strong> Define and own the Product Strategy and Vision for <em>Candy Crush Soda's</em> Core Gameplay.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <div class="role-group">
-                        <span class="role">Product Manager</span>
-                        <a href="https://www.king.com/" target="_blank" class="org-link">King</a>
+                    <div class="hero-card">
+                        <img src="candy.jpg" alt="Candy Crush Soda showcase" />
                     </div>
-                    <span class="date">Nov 2021 – June 2023</span>
-                </div>
-                <ul>
-                    <li><strong>Growth & Acquisition:</strong> Spearheaded features to acquire, retain, and monetize new players, achieving an <strong>+8% impact</strong> in FY 2023-24.</li>
-                    <li><strong>Cross-Functional Collaboration:</strong> Orchestrated ad strategy in partnership with Performance Marketing teams.</li>
-                    <li><strong>Experimentation:</strong> Led rigorous A/B testing and data analysis to validate hypotheses and drive product decisions.</li>
-                </ul>
-            </div>
+                </section>
 
-            <div class="job">
-                <div class="job-header">
-                    <div class="role-group">
-                        <span class="role">Product Manager</span>
-                        <a href="https://playtomic.com/" target="_blank" class="org-link">Playtomic</a>
+                <section class="section">
+                    <h4>Experience</h4>
+                    <div class="experience-grid">
+                        <article class="experience-card">
+                            <h5>King</h5>
+                            <span class="date">Associate Product Director · 2023–Present</span>
+                            <ul>
+                                <li>Led ML-driven segmentation and challenge roadmap for Candy Crush Soda.</li>
+                                <li>Managed PMs and cross-functional squads across discovery to delivery.</li>
+                                <li>Generated +10% revenue impact in fiscal year outcomes.</li>
+                            </ul>
+                        </article>
+
+                        <article class="experience-card">
+                            <h5>Playtomic</h5>
+                            <span class="date">Product Manager · 2021</span>
+                            <ul>
+                                <li>Launched Social vertical and scaled to 500k MAU.</li>
+                                <li>Introduced product discovery rituals and experimentation.</li>
+                                <li>Improved retention and activation with analytics-led prioritization.</li>
+                            </ul>
+                        </article>
                     </div>
-                    <span class="date">Feb 2021 – Nov 2021</span>
-                </div>
-                <ul>
-                    <li><strong>Product Launch:</strong> Led the end-to-end launch of the app's "Social" vertical, successfully scaling to <strong>500k Monthly Active Users (MAU)</strong>.</li>
-                    <li><strong>Process Improvement:</strong> Introduced modern product discovery techniques to the team, enhancing delivery speed and quality.</li>
-                    <li><strong>Analytics:</strong> Managed data pipelines and user behavior tracking via Mixpanel.</li>
-                </ul>
-            </div>
+                </section>
 
-            <div class="job">
-                <div class="job-header">
-                    <div class="role-group">
-                        <span class="role">Product Manager</span>
-                        <a href="https://tomsfive.com/" target="_blank" class="org-link">tomsfive</a>
+                <section class="section">
+                    <h4>Product Showcase</h4>
+                    <div class="showcase-grid">
+                        <article class="showcase-card">
+                            <img src="candy.jpg" alt="Candy Crush" />
+                            <div class="meta"><strong>Candy Crush Soda</strong><span>Gaming / ML</span></div>
+                        </article>
+                        <article class="showcase-card">
+                            <img src="playtomic.jpg" alt="Playtomic" />
+                            <div class="meta"><strong>Playtomic Social</strong><span>Social / Mobile</span></div>
+                        </article>
+                        <article class="showcase-card">
+                            <img src="tomsfive.jpg" alt="Tomsfive" />
+                            <div class="meta"><strong>Tomsfive</strong><span>SaaS Platform</span></div>
+                        </article>
+                        <article class="showcase-card">
+                            <img src="allianz.jpg" alt="Allianz" />
+                            <div class="meta"><strong>Allianz Technology</strong><span>Enterprise Product</span></div>
+                        </article>
+                        <article class="showcase-card">
+                            <img src="playtomic.jpg" alt="Portfolio Detail" />
+                            <div class="meta"><strong>Project Detail</strong><span>Case Study</span></div>
+                        </article>
                     </div>
-                    <span class="date">Feb 2020 – Feb 2021</span>
-                </div>
-                <ul>
-                    <li><strong>Prioritization:</strong> Managed the backlog for a SaaS startup using the <strong>RICE scoring</strong> framework to maximize development ROI.</li>
-                    <li><strong>Strategy:</strong> Developed the User Value Proposition Canvas and defined the initial Product Vision & Mission.</li>
-                </ul>
+                </section>
             </div>
 
-            <div class="job">
-                <div class="job-header">
-                    <div class="role-group">
-                        <span class="role">Product Owner</span>
-                        <a href="https://www.allianz.com/" target="_blank" class="org-link">Allianz Technology</a>
+            <div id="resume-panel" class="tab-panel" role="tabpanel">
+                <section class="section">
+                    <h4>Executive Profile</h4>
+                    <div class="compact-section">
+                        Strategic <strong>Product Leader</strong> with 6+ years of experience driving growth and scaling user bases in
+                        <strong>Gaming and SaaS</strong>. Proven record defining vision, leading international squads, and shipping
+                        high-impact initiatives at King and Playtomic.
                     </div>
-                    <span class="date">Aug 2019 – Mar 2020</span>
-                </div>
-                <ul>
-                    <li>Managed complex stakeholder relationships between Paris and Barcelona HQs.</li>
-                    <li>Defined and prioritized 200+ user stories for development teams.</li>
-                </ul>
-            </div>
-            
-             <div class="job">
-                <div class="job-header">
-                    <div class="role-group">
-                        <span class="role">Co-Founder</span>
-                        <span class="company-text">SapbéServeis</span>
+                </section>
+
+                <section class="section">
+                    <h4>Core Competencies</h4>
+                    <div class="tags">
+                        <span>Product Strategy</span><span>Team Leadership</span><span>Monetization & Growth</span>
+                        <span>Machine Learning</span><span>A/B Testing</span><span>Data Analysis (SQL, Python)</span>
+                        <span>Stakeholder Management</span><span>Mobile Gaming (B2C)</span><span>SaaS (B2B)</span>
                     </div>
-                    <span class="date">Jan 2015 – July 2017</span>
-                </div>
-                <ul>
-                    <li>Founded and managed product development for a local SaaS solution.</li>
-                </ul>
-            </div>
-        </section>
+                </section>
 
-        <section>
-            <h2>Education & Certifications</h2>
-            <div class="education-grid">
-                <div class="edu-card">
-                    <div class="edu-school"><a href="https://www.eae.es/" target="_blank">EAE Business School</a></div>
-                    <div class="edu-degree">Master in Business Administration (MBA)</div>
-                    <div class="edu-year">2018</div>
-                </div>
-                 <div class="edu-card">
-                    <div class="edu-school"><a href="https://www.uoc.edu/" target="_blank">UOC</a></div>
-                    <div class="edu-degree">Bachelor's Degree in Economics</div>
-                    <div class="edu-year">2023</div>
-                </div>
-                <div class="edu-card">
-                    <div class="edu-school"><a href="https://www.mindtheproduct.com/" target="_blank">Mind the Product</a></div>
-                    <div class="edu-degree">PM Foundation Certificate</div>
-                    <div class="edu-year">2019</div>
-                </div>
-                <div class="edu-card">
-                    <div class="edu-school"><a href="https://www.udemy.com/" target="_blank">Udemy</a></div>
-                    <div class="edu-degree">Python for Developers</div>
-                    <div class="edu-year">2020</div>
-                </div>
-                <div class="edu-card">
-                    <div class="edu-school"><a href="https://www.udemy.com/" target="_blank">Udemy</a></div>
-                    <div class="edu-degree">SQL Data Analysis</div>
-                    <div class="edu-year">2019</div>
-                </div>
+                <section class="section">
+                    <h4>Professional Experience</h4>
+                    <div class="compact-section">
+                        <h5>King · Associate Product Director (2023–Present)</h5>
+                        <ul>
+                            <li>Lead challenge-based roadmap and ML segmentation for Candy Crush Soda.</li>
+                            <li>Mentor PM team and align design, engineering, analytics, and economy stakeholders.</li>
+                            <li>Delivered +10% revenue uplift through monetization and gameplay improvements.</li>
+                        </ul>
+                    </div>
+                    <div class="compact-section">
+                        <h5>King · Product Manager (2021–2023)</h5>
+                        <ul>
+                            <li>Drove acquisition and retention initiatives with +8% business impact.</li>
+                            <li>Ran experimentation cycles and ad strategy collaboration with marketing teams.</li>
+                        </ul>
+                    </div>
+                    <div class="compact-section">
+                        <h5>Playtomic · Product Manager (2021)</h5>
+                        <ul>
+                            <li>Launched Social vertical and scaled to 500k MAU.</li>
+                            <li>Improved discovery process and analytics instrumentation.</li>
+                        </ul>
+                    </div>
+                </section>
             </div>
-        </section>
 
+            <div id="projects-panel" class="tab-panel" role="tabpanel">
+                <section class="section">
+                    <h4>Projects · Extended Portfolio</h4>
+                    <div class="project-deep-grid">
+                        <article class="project-deep-card">
+                            <img src="candy.jpg" alt="Candy Crush Soda project" />
+                            <div class="content">
+                                <h5>Candy Crush Soda</h5>
+                                <p>Owned core gameplay strategy and segmentation roadmap for one of the world’s top puzzle games.</p>
+                                <ul>
+                                    <li>Built ML-informed player challenges and progression personalization.</li>
+                                    <li>Improved monetization through store/event optimization.</li>
+                                    <li>Partnered with economy, UA, and live-ops teams.</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="project-deep-card">
+                            <img src="playtomic.jpg" alt="Playtomic Social project" />
+                            <div class="content">
+                                <h5>Playtomic Social</h5>
+                                <p>Designed and launched the social interaction layer to increase player engagement and retention.</p>
+                                <ul>
+                                    <li>Defined vision, MVP scope, and rollout plan across iOS/Android.</li>
+                                    <li>Scaled to 500k MAU with strong collaboration loops and invitations.</li>
+                                    <li>Set product analytics framework for activation and retention.</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="project-deep-card">
+                            <img src="tomsfive.jpg" alt="Tomsfive project" />
+                            <div class="content">
+                                <h5>Tomsfive SaaS</h5>
+                                <p>Shaped the B2B product strategy and prioritization model for a growing startup platform.</p>
+                                <ul>
+                                    <li>Introduced RICE prioritization and roadmap governance.</li>
+                                    <li>Defined value proposition and onboarding journey.</li>
+                                    <li>Improved feature adoption with structured feedback loops.</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="project-deep-card">
+                            <img src="allianz.jpg" alt="Allianz enterprise project" />
+                            <div class="content">
+                                <h5>Allianz Technology</h5>
+                                <p>Enterprise product ownership across distributed stakeholders and large-scale delivery timelines.</p>
+                                <ul>
+                                    <li>Managed 200+ user stories and release prioritization.</li>
+                                    <li>Aligned Paris and Barcelona business stakeholders.</li>
+                                    <li>Supported delivery quality with clear acceptance criteria.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </main>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Victor Gonzalez Corbacho. Built with simple HTML & CSS.</p>
-    </footer>
+    <script>
+        const buttons = document.querySelectorAll('.tab-btn');
+        const panels = document.querySelectorAll('.tab-panel');
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const target = button.dataset.tab;
+
+                buttons.forEach((btn) => {
+                    const active = btn === button;
+                    btn.classList.toggle('active', active);
+                    btn.setAttribute('aria-selected', active ? 'true' : 'false');
+                });
+
+                panels.forEach((panel) => {
+                    panel.classList.toggle('active', panel.id === target);
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
