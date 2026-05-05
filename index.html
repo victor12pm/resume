@@ -7,14 +7,15 @@
     <title>Victor Gonzalez | Product Director</title>
     <style>
         :root {
-            --bg: #e8edf5;
-            --surface: #ffffff;
-            --ink: #0f172a;
-            --muted: #475569;
-            --brand-900: #0a1c48;
+            --bg: #ede8e3;
+            --surface: #fefdfb;
+            --ink: #1c1917;
+            --muted: #6b6560;
+            --brand-900: #1c1917;
             --brand-700: #1e3a8a;
             --brand-500: #2f5bd4;
-            --line: #dbe4f2;
+            --line: #e4ddd5;
+            --sidebar-bot: #2c2926;
         }
 
         * {
@@ -25,7 +26,7 @@
 
         body {
             font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: radial-gradient(circle at top, #f5f7fb 0%, var(--bg) 55%);
+            background: radial-gradient(circle at top, #faf7f4 0%, var(--bg) 60%);
             color: var(--ink);
             padding: 2rem;
         }
@@ -43,7 +44,7 @@
         }
 
         aside {
-            background: linear-gradient(160deg, var(--brand-900), var(--brand-700));
+            background: linear-gradient(160deg, var(--brand-900), var(--sidebar-bot));
             color: #e2e8f0;
             padding: 2rem;
             display: flex;
@@ -89,28 +90,20 @@
             text-decoration: none;
         }
 
-        .skill-row {
-            display: grid;
-            gap: 0.3rem;
+        .side-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
         }
 
-        .skill-row span {
-            font-size: 0.86rem;
-        }
-
-        .bar {
-            width: 100%;
-            height: 6px;
-            background: rgba(148, 163, 184, 0.3);
+        .side-tags span {
+            font-size: 0.78rem;
+            padding: 0.25rem 0.65rem;
+            background: rgba(255,255,255,0.1);
+            color: #e2e8f0;
             border-radius: 999px;
-            overflow: hidden;
-        }
-
-        .bar i {
-            display: block;
-            height: 100%;
-            border-radius: inherit;
-            background: linear-gradient(90deg, #8fb7ff, #dbeafe);
+            border: 1px solid rgba(255,255,255,0.18);
+            font-weight: 500;
         }
 
         main {
@@ -119,7 +112,7 @@
 
         .top-nav {
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
             gap: 0.6rem;
             margin-bottom: 2rem;
             flex-wrap: wrap;
@@ -175,22 +168,30 @@
         }
 
         .hero h2 {
-            font-size: 3rem;
-            line-height: 1;
+            font-size: 2.5rem;
+            line-height: 1.05;
             letter-spacing: -0.03em;
-            margin-bottom: 0.45rem;
+            margin-bottom: 0.6rem;
         }
 
-        .hero h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #1e293b;
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            background: #eef2ff;
+            color: var(--brand-700);
+            border-radius: 999px;
+            border: 1px solid #c7d7fb;
+            margin-bottom: 0.9rem;
+            letter-spacing: 0.01em;
         }
 
         .hero p {
             color: var(--muted);
-            line-height: 1.7;
+            line-height: 1.75;
             max-width: 60ch;
+            font-size: 0.97rem;
         }
 
         .hero-card {
@@ -218,9 +219,12 @@
         }
 
         .section h4 {
-            font-size: 2rem;
+            font-size: 1.35rem;
             margin-bottom: 1rem;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
+            padding-left: 0.75rem;
+            border-left: 3px solid var(--brand-700);
+            font-weight: 700;
         }
 
         .experience-grid {
@@ -425,14 +429,18 @@
         .accordion-item {
             border: 1px solid var(--line);
             border-radius: 14px;
-            background: #fbfdff;
+            background: #faf7f4;
             margin-bottom: 0.6rem;
             overflow: hidden;
         }
 
         .accordion-item[open] {
-            background: #ffffff;
-            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.07);
+            background: var(--surface);
+            box-shadow: 0 4px 16px rgba(28, 25, 23, 0.07);
+        }
+
+        .accordion-summary:hover {
+            background: #f5f0ea;
         }
 
         .accordion-summary {
@@ -553,12 +561,17 @@
 
             <div class="side-block">
                 <h2>Skills</h2>
-                <div class="skills-list">
-                    <div class="skill-row"><span>Product Strategy</span><div class="bar"><i style="width:95%"></i></div></div>
-                    <div class="skill-row"><span>Leadership</span><div class="bar"><i style="width:92%"></i></div></div>
-                    <div class="skill-row"><span>Monetization</span><div class="bar"><i style="width:90%"></i></div></div>
-                    <div class="skill-row"><span>Experimentation</span><div class="bar"><i style="width:88%"></i></div></div>
-                    <div class="skill-row"><span>Analytics (SQL/Python)</span><div class="bar"><i style="width:86%"></i></div></div>
+                <div class="side-tags">
+                    <span>Product Strategy</span>
+                    <span>Leadership</span>
+                    <span>Monetization</span>
+                    <span>Experimentation</span>
+                    <span>A/B Testing</span>
+                    <span>SQL</span>
+                    <span>Python</span>
+                    <span>Stakeholder Mgmt</span>
+                    <span>Mobile Gaming</span>
+                    <span>SaaS</span>
                 </div>
             </div>
 
@@ -585,7 +598,7 @@
                 <section class="hero">
                     <div>
                         <h2>Victor González</h2>
-                        <h3>Associate Product Director</h3>
+                        <div class="hero-badge">Associate Product Director</div>
                         <p>
                             Product leader with 6+ years driving growth in gaming and SaaS. I build strategy, empower teams,
                             and deliver measurable outcomes through experimentation, machine learning, and clear product vision.
